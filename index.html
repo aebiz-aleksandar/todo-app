@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+  <html lang="en" class="light-theme">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+
+    <title>Frontend Mentor | Todo app</title>
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+
+    <!-- Todo Section -->
+    <section class="section-todo">
+      <!-- Section Header -->
+      <div class="section-header">
+        <!-- Container -->
+        <div class="container">
+          <div class="todo-intro">
+            <h3>Todo</h3>
+            <div id="todoTheme" class="todo-dark-light">
+              <img src="img/icon-sun.svg" alt="" class="light-theme">
+              <img src="img/icon-moon.svg" alt="" class="dark-theme">
+            </div>
+          </div>
+          <form id="todoForm" class="todo-form">
+            <span id="check-all" class="item-check"></span>
+            <input
+            type="text"
+            id="todoInput"
+            class="todo-input"
+            placeholder="Create a new todo..."
+            autocomplete="off">
+          </form>
+        </div>
+        <!-- Container END -->
+      </div>
+      <!-- Section Header END -->
+      <!-- Section Body -->
+      <div class="section-body">
+        <!-- Container -->
+        <div class="container">
+          <!-- Todo Output -->
+          <ul id="todoOutput" class="todo-output">
+
+          </ul>
+          <!-- Todo Output END -->
+          <!-- Todo Setup -->
+          <div id="todoSetup" class="todo-setup">
+            <span class="todo-list-left"><span id="item-left">0</span> items left</span>
+            <ul id="todoListSelect" class="todo-list-select">
+              <li class="active all">All</li>
+              <li class="active-item">Active</li>
+              <li class="completed">Completed</li>
+            </ul>
+            <span class="todo-list-clear">Clear Completed</span>
+          </div>
+          <!-- Todo Setup END -->
+        </div>
+        <!-- Container END -->
+      </div>
+      <!-- Section Body END -->
+      <!-- Section Footer -->
+      <div class="section-footer">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/aebiz-aleksandar">Aleksandar Markovic</a>.
+      </div>
+      <!-- Section Footer END -->
+    </section>
+    <!-- Todo Section END -->
+
+    <!-- Main.js -->
+    <script src="main.js"></script>
+  </body>
+  </html>

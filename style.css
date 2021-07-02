@@ -1,0 +1,280 @@
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html.dark-theme:root {
+    --bcg-color: hsl(235, 21%, 11%);
+    --bcg-item-color: hsl(235, 24%, 19%);
+    --item-color: hsl(234, 39%, 85%);
+    --item-color-complete: hsl(234, 11%, 52%);
+    --setup-item-color: hsl(233, 14%, 35%);
+    --intro-image-desktop: url('./img/bg-desktop-dark.jpg');
+    --intro-image-mobile: url('./img/bg-mobile-dark.jpg');
+    --placeholder-color: #fff;
+    --footer-color: hsl(236, 33%, 92%);
+  }
+
+  html.light-theme:root {
+    --bcg-color: hsl(236, 33%, 92%);
+    --bcg-item-color: hsl(0, 0%, 98%);
+    --item-color: hsl(235, 19%, 35%);
+    --item-color-complete: hsl(234, 39%, 85%);
+    --setup-item-color: hsl(235, 19%, 35%);
+    --intro-image-desktop: url('./img/bg-desktop-light.jpg');
+    --intro-image-mobile: url('./img/bg-mobile-light.jpg');
+    --placeholder-color: #333;
+    --footer-color: hsl(235, 21%, 11%);
+  }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+  .jc-sb {
+    justify-content: space-between;
+  }
+  .jc-c {
+    justify-content: center;
+  }
+  .ai-c {
+    align-items: center;
+  }
+
+  .section-todo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bcg-color);
+  }
+
+  .section-header {
+    background-image: var(--intro-image-mobile);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding: 45px 0;
+  }
+  .section-header .todo-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .section-header .todo-intro h3 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  .section-header .todo-intro .todo-dark-light img {
+    cursor: pointer;
+  }
+  .section-header .todo-intro .todo-dark-light img.light-theme {
+    display: none;
+  }
+
+  .section-header .todo-form {
+    position: relative;
+  }
+  .section-header .todo-form .item-check {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid hsl(234, 11%, 52%);
+    border-radius: 50%;
+  }
+  .section-header .todo-form .todo-input {
+    width: 100%;
+    padding: 15px 0 15px 55px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--bcg-item-color);
+  }
+  .section-header .todo-form .todo-input:focus {
+    outline: none;
+  }
+  .section-header .todo-form .todo-input[placeholder] {
+    color: var(--placeholder-color);
+  }
+
+  .section-body {
+    margin-top: -25px;
+  }
+  .section-body .todo-output {
+    background-color: var(--bcg-item-color);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 4px 4px 0 0;
+  }
+  .section-body .todo-output li {
+    position: relative;
+    padding: 15px 0 15px 20px;
+    color: var(--item-color);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--item-color-complete);
+    cursor: pointer;
+  }
+  .section-body .todo-output li .item-check {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid hsl(234, 11%, 52%);
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .section-body .todo-output li .item-check img {
+    display: none;
+  }
+  .section-body .todo-output li .item-remove {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .section-body .todo-output li .item-remove img {
+    width: 15px;
+    height: 15px;
+  }
+  .section-body .todo-output li.item-complete {
+    color: var(--item-color-complete);
+    text-decoration: line-through;
+  }
+  .section-body .todo-output li.item-complete .item-check {
+    background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    line-height: 20px;
+    text-align: center;
+  }
+  .section-body .todo-output li.item-complete .item-check img {
+    display: inline-block;
+  }
+
+  .section-body .todo-setup {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background-color: var(--bcg-item-color);
+    color: var(--setup-item-color);
+    border-radius: 0 0 4px 4px;
+  }
+  .section-body .todo-setup .todo-list-left {
+    padding: 0 10px;
+  }
+  .section-body .todo-setup .todo-list-clear {
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  .section-body .todo-setup .todo-list-clear:hover,
+  .section-body .todo-setup .todo-list-select li:hover {
+    color: var(--placeholder-color);
+  }
+  .section-body .todo-setup .todo-list-select {
+    position: absolute;
+    top: 71px;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    background-color: var(--bcg-item-color);
+    border-radius: 4px;
+  }
+  .section-body .todo-setup .todo-list-select li {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .section-body .todo-setup .todo-list-select li:not(:last-child) {
+    margin-right: 5px;
+  }
+  .section-body .todo-setup .todo-list-select li.active {
+    color: hsl(220, 98%, 61%);
+  }
+
+  .section-footer {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    font-size: 15px;
+    color: var(--footer-color);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .section-footer a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  @media (min-width: 375px) {
+    .container {
+      width: 350px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  @media (min-width: 600px) {
+    .container {
+      width: 540px;
+    }
+    .section-header {
+      background-image: var(--intro-image-desktop);
+      padding: 80px 0;
+    }
+    .section-header .todo-intro {
+      margin-bottom: 50px;
+    }
+    .section-body {
+      margin-top: -50px;
+    }
+    .section-body .todo-output li .item-remove img {
+      width: 18px;
+      height: 18px;
+    }
+    .section-body .todo-setup {
+      padding: 15px 20px;
+    }
+    .section-header .todo-intro h3 {
+      font-size: 28px;
+    }
+    .section-body .todo-setup .todo-list-left {
+      padding: 0;
+    }
+    .section-body .todo-setup .todo-list-clear {
+      padding: 0;
+    }
+    .section-body .todo-setup .todo-list-select {
+      position: static;
+      top: auto;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .section-body .todo-output li .item-remove {
+      display: none;
+    }
+    .section-body .todo-output li:hover .item-remove {
+      display: block;
+    }
+  }
