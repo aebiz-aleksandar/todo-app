@@ -1,5 +1,8 @@
 # todo-app
 Todo APP with a lot options, created by using Vanilla JavaScript, HTML, CSS
+
+![Todo App](/img/screen.jpg 'Todo App')
+
 # Front-end Style Guide
 
 ## Layout
